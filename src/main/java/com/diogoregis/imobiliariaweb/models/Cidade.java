@@ -1,6 +1,7 @@
 package com.diogoregis.imobiliariaweb.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.io.Serializable;
