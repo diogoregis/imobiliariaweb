@@ -2,7 +2,7 @@ package com.diogoregis.imobiliariaweb.controllers;
 
 
 import com.diogoregis.imobiliariaweb.models.Cidade;
-import com.diogoregis.imobiliariaweb.repositories.CidadeRepository;
+import com.diogoregis.imobiliariaweb.services.CidadeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/cidades")
 public class CidadeController {
 
     @Autowired
-    private CidadeRepository cidadeRepository;
+    private CidadeService cidadeRepository;
 
     @GetMapping
     public ResponseEntity<List<Cidade>> findAll(){
@@ -27,8 +26,8 @@ public class CidadeController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Optional<Cidade>> findById(@PathVariable Long id){
-        Optional<Cidade> obj = cidadeRepository.findById(id);
+    public ResponseEntity<Cidade> findById(@PathVariable Long id){
+        Cidade obj = cidadeRepository.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 

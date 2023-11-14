@@ -2,7 +2,7 @@ package com.diogoregis.imobiliariaweb.controllers;
 
 
 import com.diogoregis.imobiliariaweb.models.Comprador;
-import com.diogoregis.imobiliariaweb.repositories.CompradorRepository;
+import com.diogoregis.imobiliariaweb.services.CompradorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/compradores")
 public class CompradorController {
 
     @Autowired
-    private CompradorRepository compradorRepository;
+    private CompradorService compradorRepository;
 
     @GetMapping
     public ResponseEntity<List<Comprador>> findAll(){
@@ -27,8 +26,8 @@ public class CompradorController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Optional<Comprador>> findById(@PathVariable Long id){
-        Optional<Comprador> obj = compradorRepository.findById(id);
+    public ResponseEntity<Comprador> findById(@PathVariable Long id){
+        Comprador obj = compradorRepository.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 
