@@ -32,5 +32,9 @@ public class CategoriaController {
         return ResponseEntity.ok().body(obj);
     }
 
+    public void save(Categoria categoria){
+        categoriaRepository.save(categoria);
+    }
+
 
 }

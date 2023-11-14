@@ -1,8 +1,8 @@
 package com.diogoregis.imobiliariaweb.util;
 
 
+import com.diogoregis.imobiliariaweb.controllers.CategoriaController;
 import com.diogoregis.imobiliariaweb.models.Categoria;
-import com.diogoregis.imobiliariaweb.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -10,7 +10,7 @@ public class Populos {
 
 
     @Autowired
-    private static CategoriaRepository service;
+    private static CategoriaController service = new CategoriaController();
 
     private static String[] nomes = {"Apartamento", "Casa", "Comercial"};
 
