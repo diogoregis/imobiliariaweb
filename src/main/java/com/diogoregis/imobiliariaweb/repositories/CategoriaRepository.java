@@ -1,6 +1,7 @@
 package com.diogoregis.imobiliariaweb.repositories;
 
+import com.diogoregis.imobiliariaweb.models.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CategoriaRepository extends JpaRepository<CategoriaRepository, Long> {
+public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 }
