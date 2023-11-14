@@ -3,6 +3,7 @@ package com.diogoregis.imobiliariaweb.controllers;
 
 import com.diogoregis.imobiliariaweb.models.Categoria;
 import com.diogoregis.imobiliariaweb.repositories.CategoriaRepository;
+import com.diogoregis.imobiliariaweb.services.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ import java.util.Optional;
 public class CategoriaController {
 
     @Autowired
-    private CategoriaRepository categoriaRepository;
+    private CategoriaService categoriaRepository;
 
     @GetMapping
     public ResponseEntity<List<Categoria>> findAll(){
@@ -27,8 +28,8 @@ public class CategoriaController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Optional<Categoria>> findById(@PathVariable Long id){
-        Optional<Categoria> obj = categoriaRepository.findById(id);
+    public ResponseEntity<Categoria> findById(@PathVariable Long id){
+        Categoria obj = categoriaRepository.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 
