@@ -8,6 +8,8 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
+@Builder
+@AllArgsConstructor
 @Entity
 @Table(name = "tb_comprador")
 public class Comprador implements Serializable {

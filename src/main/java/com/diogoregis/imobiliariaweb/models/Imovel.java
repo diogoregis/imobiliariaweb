@@ -10,6 +10,8 @@ import java.io.Serializable;
 import java.time.Instant;
 
 @Data
+@Builder
+@AllArgsConstructor
 @Entity
 @Table(name = "tb_imovel")
 public class Imovel implements Serializable {
@@ -43,6 +45,7 @@ public class Imovel implements Serializable {
 
 
     public Imovel() {
+        this.moment = Instant.now();
 
     }
 }

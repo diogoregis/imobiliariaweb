@@ -11,6 +11,8 @@ import java.io.Serializable;
 
 
 @Data
+@Builder
+@AllArgsConstructor
 @Entity
 @Table(name = "tb_corretor")
 public class Corretor implements Serializable {
