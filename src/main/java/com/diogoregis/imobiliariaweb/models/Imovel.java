@@ -1,16 +1,12 @@
 package com.diogoregis.imobiliariaweb.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.time.Instant;
 
 @Data
-@Builder
-@AllArgsConstructor
 @Entity
 @Table(name = "tb_imovel")
 public class Imovel implements Serializable {
@@ -43,8 +39,22 @@ public class Imovel implements Serializable {
     private Boolean imovelVendido = false;
 
 
-    public Imovel() {
+    public Imovel(String foto, String descricao, Integer quartos, Integer suites, Integer banheiros, Integer vagas, Integer salas, Integer areaMetros, Double precoImovel, Categoria tipo, Cidade cidade, Corretor corretor) {
+        this.foto = foto;
         this.moment = Instant.now();
+        this.descricao = descricao;
+        this.quartos = quartos;
+        this.suites = suites;
+        this.banheiros = banheiros;
+        this.vagas = vagas;
+        this.salas = salas;
+        this.areaMetros = areaMetros;
+        this.precoImovel = precoImovel;
+        this.tipo = tipo;
+        this.cidade = cidade;
+        this.corretor = corretor;
+    }
 
+    public Imovel() {
     }
 }
