@@ -4,8 +4,10 @@ import com.diogoregis.imobiliariaweb.models.*;
 import com.diogoregis.imobiliariaweb.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.core.io.ResourceLoader;
 
 import java.util.Arrays;
 
@@ -28,6 +30,13 @@ public class Test implements CommandLineRunner {
     @Autowired
     private ImovelRepository imovelRepository;
 
+/*    @Bean
+    public CommandLineRunner resourceLocator(ResourceLoader resourceLoader) {
+        return args -> {
+            System.out.println("Resource locations:");
+            resourceLoader.getResource("classpath:/").getFile().getAbsolutePath();
+        };
+    }*/
 
     public void run(String... args) throws Exception {
 
@@ -69,6 +78,8 @@ public class Test implements CommandLineRunner {
                 c1,cid1,cor1);
 
         imovelRepository.save(imovel1);
+
+
 
     }
 

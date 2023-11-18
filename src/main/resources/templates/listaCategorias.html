@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +7,20 @@
 </head>
 <body>
 
-    <h2>Lista de Categorias</h2>
+    <h1>Lista de Categorias</h1>
+
+
     <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nome</th>
+                <th>TIPO</th>
             </tr>
         </thead>
         <tbody>
             <tr th:each="categoria : ${categorias}">
                 <td th:text="${categoria.id}"></td>
-                <td th:text="${categoria.nome}"></td>
+                <td th:text="${categoria.tipo}"></td>
             </tr>
         </tbody>
     </table>

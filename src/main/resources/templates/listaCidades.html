@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cidades</title>
+
+    <!-- Adicione a ligação para o Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Barra de navegação -->
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">
+        <img src="caminho/para/seu/logo_canto.png" alt="Logo Canto" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Categorias</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Cidades</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sobre</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<hr>
+<div class="container mt-5">
+    <!-- Conteúdo da página -->
+    <h1 class="mb-4">Lista de Cidades</h1>
+
+    <!-- Adicione aqui a tabela ou conteúdo da sua lista -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>CIDADE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Use Thymeleaf para iterar sobre as cidades -->
+        <tr th:each="cidade : ${cidades}">
+            <td th:text="${cidade.id}"></td>
+            <td th:text="${cidade.nome}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<!-- Adicione a ligação para o Bootstrap JS e dependências -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

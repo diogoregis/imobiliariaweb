@@ -2,29 +2,36 @@ package com.diogoregis.imobiliariaweb.controllers;
 
 
 import com.diogoregis.imobiliariaweb.models.Categoria;
-import com.diogoregis.imobiliariaweb.repositories.CategoriaRepository;
 import com.diogoregis.imobiliariaweb.services.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 
 import java.util.List;
-import java.util.Optional;
 
-@RestController
+@Controller
 @RequestMapping(value = "/categorias")
 public class CategoriaController {
 
     @Autowired
     private CategoriaService categoriaRepository;
 
-    @GetMapping
+/*    @GetMapping
     public ResponseEntity<List<Categoria>> findAll(){
         List<Categoria> list = categoriaRepository.findAll();
         return ResponseEntity.ok().body(list);
+    }*/
+
+    @GetMapping
+    public String listaCategorias(Model model) {
+        List<Categoria> categorias = categoriaRepository.findAll();
+        model.addAttribute("categorias", categorias);
+        return "listaCategorias";
     }
 
     @GetMapping(value = "/{id}")
