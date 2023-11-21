@@ -21,12 +21,6 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaRepository;
 
-/*    @GetMapping
-    public ResponseEntity<List<Categoria>> findAll(){
-        List<Categoria> list = categoriaRepository.findAll();
-        return ResponseEntity.ok().body(list);
-    }*/
-
     @GetMapping
     public String listaCategorias(Model model) {
         List<Categoria> categorias = categoriaRepository.findAll();
@@ -42,6 +36,13 @@ public class CategoriaController {
 
     public void save(Categoria categoria){
         categoriaRepository.save(categoria);
+    }
+
+
+    @GetMapping(value = "/api")
+    public ResponseEntity<List<Categoria>> findAll(){
+        List<Categoria> list = categoriaRepository.findAll();
+        return ResponseEntity.ok().body(list);
     }
 
 
