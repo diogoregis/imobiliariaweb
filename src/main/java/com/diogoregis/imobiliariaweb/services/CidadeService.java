@@ -23,4 +23,8 @@ public class CidadeService {
         return obj.get();
     }
 
+    public void save(Cidade cidade){
+        service.save(cidade);
+    }
+
 }
