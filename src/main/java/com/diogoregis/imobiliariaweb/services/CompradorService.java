@@ -1,5 +1,6 @@
 package com.diogoregis.imobiliariaweb.services;
 
+import com.diogoregis.imobiliariaweb.dto.CompradorForm;
 import com.diogoregis.imobiliariaweb.models.Comprador;
 import com.diogoregis.imobiliariaweb.repositories.CompradorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,11 @@ public class CompradorService {
 
     public void save(Comprador comprador){
         repository.save(comprador);
+    }
+
+    public Comprador novoComprador(CompradorForm compradorForm){
+        Comprador comprador = new Comprador(compradorForm.getNome(), compradorForm.getContato(), compradorForm.getCpf());
+        return comprador;
     }
 
 }
