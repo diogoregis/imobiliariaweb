@@ -8,8 +8,6 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-@Builder
-@AllArgsConstructor
 @Entity
 @Table(name = "tb_comprador")
 public class Comprador implements Serializable {
@@ -23,6 +21,14 @@ public class Comprador implements Serializable {
     private String cpf;
 
     public Comprador() {
+
+    }
+
+    public Comprador(String nome, String contato, String cpf) {
+        this.id = null;
+        this.nome = nome;
+        this.contato = contato;
+        this.cpf = cpf;
 
     }
 

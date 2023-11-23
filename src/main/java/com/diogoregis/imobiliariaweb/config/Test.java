@@ -46,10 +46,10 @@ public class Test implements CommandLineRunner {
 
         categoriaRepository.saveAll(Arrays.asList(c1,c2,c3));
 
-        Comprador com1 = new Comprador(null,"Fulano de Tal", "(81) 99521-4050", "08483500427");
-        Comprador com2 = new Comprador(null,"Anderson Fagundes", "(81) 99999-4050", "08883527421");
-        Comprador com3 = new Comprador(null,"Carlos Brow", "(81) 99521-9999", "08783527421");
-        Comprador com4 = new Comprador(null,"José Sicrano", "(81) 99991-4050", "38883527421");
+        Comprador com1 = new Comprador("Fulano de Tal", "(81) 99521-4050", "08483500427");
+        Comprador com2 = new Comprador("Anderson Fagundes", "(81) 99999-4050", "08883527421");
+        Comprador com3 = new Comprador("Carlos Brow", "(81) 99521-9999", "08783527421");
+        Comprador com4 = new Comprador("José Sicrano", "(81) 99991-4050", "38883527421");
 
         compradorRepository.saveAll(Arrays.asList(com1,com2, com3, com4));
 

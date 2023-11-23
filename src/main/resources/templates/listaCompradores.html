@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista Compradores</title>
+</head>
+<body>
+
+<h1>Lista de Compradores</h1>
+
+<br>
+
+<div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>CONTATO</th>
+            <th>CPF</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="comprador : ${compradores}">
+            <td th:text="${comprador.id}"></td>
+            <td th:text="${comprador.nome}"></td>
+            <td th:text="${comprador.contato}"></td>
+            <td th:text="${comprador.cpf}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<br>
+
+<div>
+
+    <a th:href="@{/compradores/form}">Cadastrar Comprador</a>
+
+</div>
+
+</body>
+</html>
