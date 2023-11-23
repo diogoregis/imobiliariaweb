@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Cidades</title>
 
-    <!-- Adicione a ligação para o Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- Barra de navegação -->
+
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#">
         <img src="caminho/para/seu/logo_canto.png" alt="Logo Canto" height="40">
@@ -52,7 +52,6 @@
         </tr>
         </thead>
         <tbody>
-        <!-- Use Thymeleaf para iterar sobre as cidades -->
         <tr th:each="cidade : ${cidades}">
             <td th:text="${cidade.id}"></td>
             <td th:text="${cidade.nome}"></td>
