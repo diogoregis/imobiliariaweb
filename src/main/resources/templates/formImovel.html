@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,6 +8,19 @@
     <title>Cadastro Imovel</title>
 </head>
 <body>
+
+<h1>Cadastro de Imovel</h1>
+
+<br>
+
+<div>
+
+    <select name="opções" id="listCategorias" >
+        <option selected>Escolha uma Categoria</option>
+        <option th:each="categoria : ${categorias}"  th:text="${categoria.tipo}"></option>
+    </select>
+
+</div>
 
 </body>
 </html>

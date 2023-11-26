@@ -2,7 +2,10 @@ package com.diogoregis.imobiliariaweb.controllers;
 
 
 import com.diogoregis.imobiliariaweb.dto.ImovelForm;
+import com.diogoregis.imobiliariaweb.models.Categoria;
 import com.diogoregis.imobiliariaweb.models.Imovel;
+import com.diogoregis.imobiliariaweb.services.CategoriaService;
+import com.diogoregis.imobiliariaweb.services.CorretorService;
 import com.diogoregis.imobiliariaweb.services.ImovelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +19,11 @@ import java.util.List;
 @RequestMapping(value = "/imoveis")
 public class ImovelController {
 
+    @Autowired
+    private CorretorService corretorService;
+
+    @Autowired
+    private CategoriaService categoriaService;
     @Autowired
     private ImovelService imovelRepository;
 
@@ -39,7 +47,9 @@ public class ImovelController {
     }
 
     @GetMapping(value = "/form")
-    public String chamaForm(){
+    public String chamaForm(Model categoria){
+        List<Categoria> categorias = categoriaService.findAll();
+        categoria.addAttribute("categorias", categorias);
         return "formImovel";
     }
     @PostMapping

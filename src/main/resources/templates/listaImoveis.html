@@ -9,5 +9,47 @@
 </head>
 <body>
 
+<h1>Lista de Imoveis</h1>
+
+<br>
+
+<div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>DESCRIÇÃO</th>
+            <th>QUARTOS</th>
+            <th>SUITES</th>
+            <th>VAGAS</th>
+            <th>AREA TOTAL</th>
+            <th>CIDADE</th>
+            <th>PREÇO</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="imovel : ${imoveis}">
+            <td th:text="${imovel.id}"></td>
+            <td th:text="${imovel.descricao}"></td>
+            <td th:text="${imovel.quartos}"></td>
+            <td th:text="${imovel.suites}"></td>
+            <td th:text="${imovel.vagas}"></td>
+            <td th:text="${imovel.areaMetros}"></td>
+            <td th:text="${imovel.cidade.nome}"></td>
+            <td th:text="${imovel.precoImovel}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<br>
+
+<div>
+
+    <a th:href="@{/imoveis/form}">Cadastrar Comprador</a>
+
+</div>
+
 </body>
 </html>
