@@ -1,5 +1,6 @@
 package com.diogoregis.imobiliariaweb.services;
 
+import com.diogoregis.imobiliariaweb.dto.ImovelForm;
 import com.diogoregis.imobiliariaweb.models.Imovel;
 import com.diogoregis.imobiliariaweb.repositories.ImovelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,14 @@ public class ImovelService {
 
     public void save(Imovel imovel){
         repository.save(imovel);
+    }
+
+    public Imovel criarImovel(ImovelForm imovelForm){
+        Imovel imovel = new Imovel(imovelForm.getFoto(), imovelForm.getDescricao(), imovelForm.getQuartos(),
+                imovelForm.getSuites(), imovelForm.getBanheiros(), imovelForm.getVagas(), imovelForm.getSalas(),
+                imovelForm.getAreaMetros(), imovelForm.getPrecoImovel(), imovelForm.getTipo(),imovelForm.getCidade(),
+                imovelForm.getCorretor());
+        return imovel;
     }
 
 }
